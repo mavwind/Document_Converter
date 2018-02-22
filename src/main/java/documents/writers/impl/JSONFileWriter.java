@@ -13,6 +13,13 @@ import java.util.List;
 import java.util.Map;
 
 public class JSONFileWriter implements IFileWriter {
+    /**
+     * Method writing Json file. It is using ObjectMapper object from
+     * com.fasterxml.jackson.databind dependency
+     * @param filePath file path where converted Json file should be saved
+     * @param data previously processed data( as List of Maps) from external file
+     * @throws FileWriterException if creating or saving Json file is failed
+     */
     @Override
     public void write(String filePath, List<Map<String, String>> data) throws FileWriterException {
 
@@ -24,6 +31,9 @@ public class JSONFileWriter implements IFileWriter {
             throw new FileWriterException(e.getMessage(), e);
         }
 
+
+        // Alternative method of writing Json file
+        // It uses JSONArray object from org.json. dependency
         /*try {
             FileWriter fileWriter = new FileWriter(filePath);
             BufferedWriter bufferedWriter = new BufferedWriter(fileWriter);

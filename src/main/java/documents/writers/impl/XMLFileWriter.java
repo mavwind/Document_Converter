@@ -24,6 +24,12 @@ public class XMLFileWriter implements IFileWriter {
     private static final String TABULATOR = "\t";
     private static final String DOUBLE_TABULATOR = "\t\t";
 
+    /**
+     * Method writing XML file.
+     * @param filePath file path where converted XML file should be saved
+     * @param data previously processed data( as List of Maps) from external file
+     * @throws FileWriterException if creating or saving XML file is failed
+     */
     @Override
     public void write(String filePath, List<Map<String, String>> data) throws FileWriterException {
         try {
@@ -41,6 +47,11 @@ public class XMLFileWriter implements IFileWriter {
         }
     }
 
+    /**
+     * Private method building XML format String
+     * @param data previously processed data( as List of Maps) from external file
+     * @return data as String which is XML data format
+     */
     private String prepareContent(List<Map<String, String>> data) {
 
         List<String> headers = new ArrayList<>();

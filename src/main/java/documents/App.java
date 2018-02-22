@@ -8,8 +8,8 @@ import documents.exceptions.FileWriterException;
 public class App
 {
     public static void main( String[] args ) {
-        String inputFilePath = "";
-        String outputFilePath = "";
+        String inputFilePath = "C:\\Users\\Sebastian\\IdeaProjects\\document_converter\\inputFile.json";
+        String outputFilePath = "C:\\Users\\Sebastian\\IdeaProjects\\document_converter\\outputFile.csv";
 
         IDocumentConverter documentConverter = new DocumentConverter();
         try {

@@ -19,6 +19,13 @@ import java.util.List;
 import java.util.Map;
 
 public class XMLFileReader implements IFileReader {
+
+    /**
+     * Method reading XML file
+     * @param filePath file path of the XML file to be converted
+     * @return converted XML file as List of Maps
+     * @throws FileReaderException if reading XML file is failed
+     */
     @Override
     public List<Map<String, String>> read(String filePath) throws FileReaderException {
         List<Map<String, String>> result = new ArrayList<>();

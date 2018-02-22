@@ -14,6 +14,12 @@ public class CSVFileReader implements IFileReader {
 
     private static final String CSV_FILE_SEPARATOR = ";";
 
+    /**
+     * Method reads CSV file and takes semicolon as separator of words
+     * @param filePath file path of the CSV file to be converted
+     * @return converted CSV file as List of Maps
+     * @throws FileReaderException if reading CSV file is failed
+     */
     @Override
     public List<Map<String, String>> read(String filePath) throws FileReaderException {
         List<Map<String, String>> result = new ArrayList<>();

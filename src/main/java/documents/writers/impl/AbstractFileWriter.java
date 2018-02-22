@@ -12,6 +12,12 @@ import java.util.Map;
 
 public abstract class AbstractFileWriter implements IFileWriter {
 
+    /**
+     * Method writing CSV file.
+     * @param filePath file path where converted CSV file should be saved
+     * @param data previously processed data( as List of Maps) from external file
+     * @throws FileWriterException if creating or saving CSV file is failed
+     */
     @Override
     public void write(String filePath, List<Map<String, String>> data) throws FileWriterException {
         try {
@@ -34,6 +40,11 @@ public abstract class AbstractFileWriter implements IFileWriter {
 
     protected abstract List<String> prepareRows(List<Map<String,String>> data);
 
+    /**
+     * Method preparing row of headers
+     * @param data previously processed data( as List of Maps) from external file
+     * @return headers as List of Strings
+     */
     protected List<String> prepareHeaderRow(List<Map<String, String>> data) {
         List<String> headers = new ArrayList<>();
         for (String key : data.get(0).keySet()) {

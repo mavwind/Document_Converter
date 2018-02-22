@@ -14,6 +14,13 @@ import java.util.Map;
 public class JSONAlternativeFileReader implements IFileReader {
     private static final String FILE_DEFAULT_ENCODING = "UTF-8";
 
+    /**
+     * Alternative method reading Json file which uses CollectionType and
+     * ObjectMapper objects from org.codehaus.jackson dependency
+     * @param filePath file path of the Json file to be converted
+     * @return converted Json file as List of Maps
+     * @throws FileReaderException if reading Json file is failed
+     */
     @Override
     public List<Map<String, String>> read(String filePath) throws FileReaderException {
         try {

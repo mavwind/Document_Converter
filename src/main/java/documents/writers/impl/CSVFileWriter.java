@@ -6,6 +6,11 @@ import java.util.Map;
 
 public class CSVFileWriter extends AbstractFileWriter {
 
+    /**
+     * Method creating CSV format List of Strings
+     * @param data previously processed data( as List of Maps) from external file
+     * @return List of Strings as CVS format rows using semicolon as separator
+     */
     @Override
     protected List<String> prepareRows(List<Map<String, String>> data) {
         List<String> result = new ArrayList<>();

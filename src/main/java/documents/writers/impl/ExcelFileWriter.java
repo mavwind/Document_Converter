@@ -1,18 +1,23 @@
 package documents.writers.impl;
 
+import documents.exceptions.FileWriterException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import documents.exceptions.FileWriterException;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.List;
 import java.util.Map;
 
 public class ExcelFileWriter extends AbstractFileWriter {
+    /**
+     * Method writing Excel file. It is using org.apache.poi dependency
+     * @param filePath file path where converted Excel file should be saved
+     * @param data previously processed data( as List of Maps) from external file
+     * @throws FileWriterException if creating or saving Excel file is failed
+     */
     @Override
     public void write(String filePath, List<Map<String, String>> data) throws FileWriterException {
         XSSFWorkbook workbook = new XSSFWorkbook();

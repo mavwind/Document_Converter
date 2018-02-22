@@ -17,6 +17,12 @@ public class JSONFileReader implements IFileReader {
 
     private static final String FILE_DEFAULT_ENCODING = "UTF-8";
 
+    /**
+     * Method reading Json file which uses JSONObject and JSONArray objects from org.json. dependency
+     * @param filePath file path of the Json file to be converted
+     * @return converted Json file as List of Maps
+     * @throws FileReaderException if reading Json file is failed
+     */
     @Override
     public List<Map<String, String>> read(String filePath) throws FileReaderException {
         List<Map<String, String>> result = new ArrayList<>();

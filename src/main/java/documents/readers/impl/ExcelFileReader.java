@@ -1,20 +1,26 @@
 package documents.readers.impl;
 
+import documents.exceptions.FileReaderException;
+import documents.readers.IFileReader;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import documents.exceptions.FileReaderException;
-import documents.readers.IFileReader;
 
 import java.io.File;
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.*;
 
 public class ExcelFileReader implements IFileReader {
+
+    /**
+     * Method reading Excel file
+     * @param filePath file path of the Excel file to be converted
+     * @return converted Excel file as List of Maps
+     * @throws FileReaderException if reading Excel file is failed
+     */
     @Override
     public List<Map<String, String>> read(String filePath) throws FileReaderException {
         List<Map<String, String>> result = new ArrayList<>();
@@ -44,6 +50,11 @@ public class ExcelFileReader implements IFileReader {
         }
     }
 
+    /**
+     *
+     * @param next as specific row in file
+     * @return headers as List of Strings
+     */
     private List<String> getHeadersFromFile(Row next) {
         List<String> headers = new ArrayList<>();
         Iterator<Cell> cells = next.iterator();

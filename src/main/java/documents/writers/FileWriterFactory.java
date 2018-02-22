@@ -3,6 +3,11 @@ package documents.writers;
 import documents.commons.SupportedFileExtensions;
 import documents.writers.impl.*;
 
+/**
+ * Application of design pattern: Factory
+ * Class is responsible for returning proper file writer according to file extension
+ * Possibility of implementing further file readers
+ */
 public class FileWriterFactory {
 
     public IFileWriter produce(String filePath) {
